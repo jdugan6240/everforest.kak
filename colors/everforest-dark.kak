@@ -124,43 +124,41 @@ try %{
     hook global ModuleLoaded powerline %{ require-module powerline_everforest_dark }
     provide-module powerline_everforest_dark %§
         set-option -add global powerline_themes "everforest-dark"
-        define-command -hidden powerline-theme-everforest-dark %{ evaluate-commands %sh{
-    	printf "%s\n" "
-                declare-option -hidden str powerline_color00 rgb:%opt{green}       # fg: bufname
-                declare-option -hidden str powerline_color01 rgb:%opt{bg_green}        # bg: position
-                declare-option -hidden str powerline_color02 rgb:%opt{fg}    # fg: git
-                declare-option -hidden str powerline_color03 rgb:%opt{bg_green}    # bg: bufname
-                declare-option -hidden str powerline_color04 rgb:%opt{bg_yellow}      # bg: git
-                declare-option -hidden str powerline_color05 rgb:%opt{green}    # fg: position
-                declare-option -hidden str powerline_color06 rgb:%opt{blue}    # fg: line-column
-                declare-option -hidden str powerline_color07 rgb:%opt{blue}        # fg: mode-info
-                declare-option -hidden str powerline_color08 rgb:%opt{subbg}       # base background
-                declare-option -hidden str powerline_color09 rgb:%opt{bg_blue}        # bg: line-column
-                declare-option -hidden str powerline_color10 rgb:%opt{fg}       # fg: filetype
-                declare-option -hidden str powerline_color11 rgb:%opt{bg5}    # bg: filetype
-                declare-option -hidden str powerline_color12 rgb:%opt{bg_blue}        # bg: client
-                declare-option -hidden str powerline_color13 rgb:%opt{grey0}    # fg: client
-                declare-option -hidden str powerline_color14 rgb:%opt{bg0}    # bg: session
-                declare-option -hidden str powerline_color15 rgb:%opt{fg} # fg: session
-                declare-option -hidden str powerline_color16 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color17 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color18 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color19 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color20 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color21 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color22 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color23 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color24 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color25 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color26 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color27 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color28 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color29 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color30 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_color31 rgb:%opt{red}         # unused
-                declare-option -hidden str powerline_next_bg rgb:373c47
-                declare-option -hidden str powerline_base_bg rgb:373c47
-            "
-        }}
+        define-command -hidden powerline-theme-everforest-dark %{
+            declare-option -hidden str powerline_color00 "rgb:%opt{green}"       # fg: bufname
+            declare-option -hidden str powerline_color01 "rgb:%opt{bg_green}"    # bg: position
+            declare-option -hidden str powerline_color02 "rgb:%opt{fg}"          # fg: git
+            declare-option -hidden str powerline_color03 "rgb:%opt{bg_green}"    # bg: bufname
+            declare-option -hidden str powerline_color04 "rgb:%opt{bg_yellow}"   # bg: git
+            declare-option -hidden str powerline_color05 "rgb:%opt{green}"       # fg: position
+            declare-option -hidden str powerline_color06 "rgb:%opt{blue}"        # fg: line-column
+            declare-option -hidden str powerline_color07 "rgb:%opt{blue}"        # fg: mode-info
+            declare-option -hidden str powerline_color08 "rgb:%opt{subbg}"       # base background
+            declare-option -hidden str powerline_color09 "rgb:%opt{bg_blue}"     # bg: line-column
+            declare-option -hidden str powerline_color10 "rgb:%opt{fg}"          # fg: filetype
+            declare-option -hidden str powerline_color11 "rgb:%opt{bg5}"         # bg: filetype
+            declare-option -hidden str powerline_color12 "rgb:%opt{bg_blue}"     # bg: client
+            declare-option -hidden str powerline_color13 "rgb:%opt{grey0}"       # fg: client
+            declare-option -hidden str powerline_color14 "rgb:%opt{bg0}"         # bg: session
+            declare-option -hidden str powerline_color15 "rgb:%opt{fg}"          # fg: session
+            declare-option -hidden str powerline_color16 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color17 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color18 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color19 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color20 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color21 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color22 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color23 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color24 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color25 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color26 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color27 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color28 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color29 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color30 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_color31 "rgb:%opt{red}"         # unused
+            declare-option -hidden str powerline_next_bg "rgb:%opt{subbg}"
+            declare-option -hidden str powerline_base_bg "rgb:%opt{subbg}"
+        }
     §
 }
