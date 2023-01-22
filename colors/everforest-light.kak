@@ -102,6 +102,12 @@ set-face global DiagnosticError "default+u"
 set-face global DiagnosticWarning "default+u"
 set-face global DiagnosticInfo "default+u"
 set-face global DiagnosticHint "default+u"
+define-command -override everforest-curly-underlines %{
+    set-face global DiagnosticError ",,rgb:%opt{red}+c"
+    set-face global DiagnosticWarning ",,rgb:%opt{orange}+c"
+    set-face global DiagnosticInfo ",,rgb:%opt{blue}+c"
+    set-face global DiagnosticHint ",,rgb:%opt{hint}+u"
+}
 
 # Infobox faces
 set-face global InfoDefault Information
@@ -119,7 +125,6 @@ set-face global InfoDiagnosticInformation InlayDiagnosticInfo
 set-face global InfoDiagnosticWarning InlayDiagnosticWarning
 
 # powerline.kak
-
 try %{
     hook global ModuleLoaded powerline %{ require-module powerline_everforest_light }
     provide-module powerline_everforest_light %§
