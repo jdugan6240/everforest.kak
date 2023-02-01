@@ -79,7 +79,7 @@ set-face global StatusLineInfo "rgb:%opt{blue}"
 set-face global StatusLineValue "rgb:%opt{fg}"
 set-face global StatusCursor "default,rgba:%opt{blue}%opt{cursoralpha}"
 set-face global Prompt "rgb:%opt{blue}"
-set-face global MatchingChar "default,rgb:%opt{bg5}"
+set-face global MatchingChar "default,rgb:%opt{bg2}+bi"
 set-face global BufferPadding "rgb:%opt{bg0},rgb:%opt{bg0}"
 set-face global Whitespace "rgb:%opt{grey1}"
 
@@ -167,3 +167,6 @@ try %{
         }
     §
 }
+
+# kak-rainbower
+try %{ set-option global rainbow_colors "rgb:%opt{blue}" "rgb:%opt{purple}" "rgb:%opt{red}" "rgb:%opt{yellow}" }
