@@ -1,33 +1,33 @@
-# Everforest light soft background
-declare-option str bg0 "f8f0dc"
-declare-option str bg1 "efead4"
-declare-option str bg2 "e9e5cf"
-declare-option str bg3 "e1ddc9"
-declare-option str bg4 "dcd8c4"
-declare-option str bg5 "b9c0ab"
-declare-option str bg_visual "e6e9c4"
-declare-option str bg_red "f9e0d4"
-declare-option str bg_green "edeece"
-declare-option str bg_blue "e7ede5"
-declare-option str bg_yellow "f6e9c9"
-declare-option str fg "5c6a72"
-declare-option str red "f85552"
-declare-option str orange "f57d26"
-declare-option str yellow "dfa000"
-declare-option str green "8da101"
-declare-option str aqua "35a77c"
-declare-option str blue "3a94c5"
-declare-option str purple "df69ba"
-declare-option str grey0 "a6b0a0"
-declare-option str grey1 "93b259"
-declare-option str grey2 "829181"
+# Everforest dark hard background
+declare-option str bg_dim "1e2326"
+declare-option str bg0 "272e33"
+declare-option str bg1 "2e383c"
+declare-option str bg2 "374145"
+declare-option str bg3 "414b50"
+declare-option str bg4 "495156"
+declare-option str bg5 "4f5b58"
+declare-option str bg_visual "4c3743"
+declare-option str bg_red "493b40"
+declare-option str bg_green "3c4841"
+declare-option str bg_blue "384b55"
+declare-option str bg_yellow "45443c"
+declare-option str fg "d3c6aa"
+declare-option str red "e67e80"
+declare-option str orange "e69875"
+declare-option str yellow "dbbc7f"
+declare-option str green "a7c080"
+declare-option str aqua "83c092"
+declare-option str blue "7fbbb3"
+declare-option str purple "d699b6"
+declare-option str grey0 "7a8478"
+declare-option str grey1 "859289"
+declare-option str grey2 "9da9a0"
 
-declare-option str cursoralpha "80"
-declare-option str selectionalpha "40"
+declare-option str cursoralpha "95"
 
-# Menus don't support transparency, so we must hardcode the selection + sub bg colors
-declare-option str menuselection "bbc9e8"
-declare-option str subbg "e6e6e6"
+declare-option str statusline1 "a7c080"
+declare-option str statusline2 "d3c6aa"
+declare-option str statusline3 "e67e80"
 
 
 # CODE
@@ -59,21 +59,21 @@ set-face global list "rgb:%opt{fg}"
 # BUILTIN
 
 set-face global Default "rgb:%opt{fg},rgb:%opt{bg0}"
-set-face global PrimarySelection "default,rgba:%opt{red}%opt{selectionalpha}"
-set-face global SecondarySelection "default,rgba:%opt{orange}%opt{selectionalpha}"
-set-face global PrimaryCursor "default,rgba:%opt{red}%opt{cursoralpha}"
+set-face global PrimarySelection "default,rgb:%opt{bg_visual}"
+set-face global SecondarySelection "default,rgb:%opt{bg_green}"
+set-face global PrimaryCursor "default,rgba:%opt{fg}%opt{cursoralpha}"
 set-face global SecondaryCursor "default,rgba:%opt{orange}%opt{cursoralpha}"
 set-face global PrimaryCursorEol "default,rgba:%opt{yellow}%opt{cursoralpha}"
-set-face global SecondaryCursorEol "default,rgba:%opt{orange}%opt{cursoralpha}"
+set-face global SecondaryCursorEol "default,rgba:%opt{green}%opt{cursoralpha}"
 set-face global LineNumbers "rgb:%opt{grey0}"
 set-face global LineNumberCursor "rgb:%opt{grey2}+b"
 set-face global LineNumbersWrapped "rgb:%opt{bg0},rgb:%opt{bg0}"
-set-face global MenuForeground "rgb:%opt{fg},rgb:%opt{menuselection}"
-set-face global MenuBackground "rgb:%opt{fg},rgb:%opt{subbg}"
+set-face global MenuForeground "rgb:%opt{bg2},rgb:%opt{statusline1}"
+set-face global MenuBackground "rgb:%opt{fg},rgb:%opt{bg2}"
 set-face global MenuInfo "rgb:%opt{green}"
-set-face global Information "rgb:%opt{fg},rgb:%opt{subbg}"
+set-face global Information "rgb:%opt{fg},rgb:%opt{bg2}"
 set-face global Error "rgb:%opt{red}"
-set-face global StatusLine "rgb:%opt{fg},rgb:%opt{subbg}"
+set-face global StatusLine "rgb:%opt{fg},rgb:%opt{bg2}"
 set-face global StatusLineMode "rgb:%opt{orange}"
 set-face global StatusLineInfo "rgb:%opt{blue}"
 set-face global StatusLineValue "rgb:%opt{fg}"
@@ -126,10 +126,10 @@ set-face global InfoDiagnosticWarning InlayDiagnosticWarning
 
 # powerline.kak
 try %{
-    hook global ModuleLoaded powerline %{ require-module powerline_everforest_light }
-    provide-module powerline_everforest_light %§
-        set-option -add global powerline_themes "everforest-light"
-        define-command -hidden powerline-theme-everforest-light %{
+    hook global ModuleLoaded powerline %{ require-module powerline_everforest_dark_hard }
+    provide-module powerline_everforest_dark_hard %§
+        set-option -add global powerline_themes "everforest-dark-hard"
+        define-command -hidden powerline-theme-everforest-dark-hard %{
             declare-option -hidden str powerline_color00 "rgb:%opt{green}"       # fg: bufname
             declare-option -hidden str powerline_color01 "rgb:%opt{bg_green}"    # bg: position
             declare-option -hidden str powerline_color02 "rgb:%opt{fg}"          # fg: git
@@ -138,7 +138,7 @@ try %{
             declare-option -hidden str powerline_color05 "rgb:%opt{green}"       # fg: position
             declare-option -hidden str powerline_color06 "rgb:%opt{blue}"        # fg: line-column
             declare-option -hidden str powerline_color07 "rgb:%opt{blue}"        # fg: mode-info
-            declare-option -hidden str powerline_color08 "rgb:%opt{subbg}"       # base background
+            declare-option -hidden str powerline_color08 "rgb:%opt{bg2}"       # base background
             declare-option -hidden str powerline_color09 "rgb:%opt{bg_blue}"     # bg: line-column
             declare-option -hidden str powerline_color10 "rgb:%opt{fg}"          # fg: filetype
             declare-option -hidden str powerline_color11 "rgb:%opt{bg5}"         # bg: filetype
@@ -162,8 +162,8 @@ try %{
             declare-option -hidden str powerline_color29 "rgb:%opt{red}"         # unused
             declare-option -hidden str powerline_color30 "rgb:%opt{red}"         # unused
             declare-option -hidden str powerline_color31 "rgb:%opt{red}"         # unused
-            declare-option -hidden str powerline_next_bg "rgb:%opt{subbg}"
-            declare-option -hidden str powerline_base_bg "rgb:%opt{subbg}"
+            declare-option -hidden str powerline_next_bg "rgb:%opt{bg2}"
+            declare-option -hidden str powerline_base_bg "rgb:%opt{bg2}"
         }
     §
 }
