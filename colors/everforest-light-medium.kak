@@ -34,7 +34,7 @@ declare-option str statusline3 "e66868"
 
 set-face global value "rgb:%opt{purple}"
 set-face global type "rgb:%opt{red}"
-set-face global variable "rgb:%opt{fg}"
+set-face global variable "rgb:%opt{yellow}"
 set-face global module "rgb:%opt{orange}"
 set-face global function "rgb:%opt{green}"
 set-face global string "rgb:%opt{green}"
