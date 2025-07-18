@@ -24,7 +24,7 @@ declare-option str grey0 "7a8478"
 declare-option str grey1 "859289"
 declare-option str grey2 "9da9a0"
 
-declare-option str cursoralpha "95"
+declare-option str cursoralpha "FF"
 
 declare-option str statusline1 "a7c080"
 declare-option str statusline2 "d3c6aa"
