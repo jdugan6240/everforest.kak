@@ -50,6 +50,7 @@ set-face global Prompt "rgb:%opt{blue}"
 set-face global MatchingChar "default,rgb:%opt{bg2}+bi"
 set-face global BufferPadding "rgb:%opt{bg0},rgb:%opt{bg0}"
 set-face global Whitespace "rgb:%opt{bg4}"
+set-face global WrapMarker "rgb:%opt{grey0}"
 
 # PLUGINS
 
